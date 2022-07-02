@@ -2,9 +2,21 @@
 - name: Check argonone-uninstall command exists
   command: which argonone-uninstall
   ignore_errors: true
+  changed_when: false
   register: which_command
 
-- name: Uninstall argonone commands
+- name: Execute uninstalling argonone commands
   become: yes
-  command: argonone-uninstall
-  when: which_command.rc | int == 0
+  ansible.builtin.expect:
+    command: argonone-uninstall
+    responses:
+      "Press Y to continue:": Y
+
+- name: Remove files
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - /usr/bin/argonone-ir
+    - /usr/bin/argonone-config
+    - /etc/argononed.conf  

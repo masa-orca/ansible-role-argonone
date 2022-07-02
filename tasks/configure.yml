@@ -8,6 +8,7 @@
     group: root
 
 - name: Restart argononed.service
+  become: yes
   ansible.builtin.systemd:
     name: argononed.service
     state:  restarted

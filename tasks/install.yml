@@ -1,6 +1,6 @@
 ---
 - name: Check argonone-config command exists
-  command: which argonone-config
+  command: which argonone-uninstall
   ignore_errors: true
   register: which_command
 
