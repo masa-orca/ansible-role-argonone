@@ -1,0 +1,13 @@
+---
+- name: Copy argononed.conf
+  ansible.builtin.copy:
+    src: argononed.conf
+    dest: /etc/argononed.conf
+    mode: '0666'
+    owner: root
+    group: root
+
+- name: Restart argononed.service
+  ansible.builtin.systemd:
+    name: argononed.service
+    state:  restarted

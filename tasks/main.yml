@@ -1,0 +1,4 @@
+---
+- name: Include {{ argoneone_action }}.yml
+  ansible.builtin.include_tasks:
+    file: {{ argoneone_action }}.yml
