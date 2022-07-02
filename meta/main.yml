@@ -1,14 +1,23 @@
+---
 galaxy_info:
-  author: masa-orca
-  description: This role will setup argonone tool.
-  company: home
-  min_ansible_version: 2.11
-  platforms:
-  - name: Debian
-    versions:
-    - buster
-    - bullseye
-  galaxy_tags:
-    - argonone
+    role_name: argonone
+    namespace: masa_orca
+    author: masa-orca
+    description: This role will install argonone.
+    company: home
+    license: MIT License
+    min_ansible_version: 2.13.0
+    version: "1.0.0"
+    readme: "README.md"
+    platforms:
+        - name: Debian
+          versions:
+              - buster
+              - bullseye
+    galaxy_tags:
+        - argoneone
+    repository: https://github.com/masa-orca/ansible-role-argoneone.git
+    homepage: https://github.com/masa-orca/ansible-role-argoneone
+    issues: https://github.com/masa-orca/ansible-role-argoneone/issues
 
 dependencies: []
