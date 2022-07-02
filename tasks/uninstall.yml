@@ -1,0 +1,10 @@
+---
+- name: Check argonone-uninstall command exists
+  command: which argonone-uninstall
+  ignore_errors: true
+  register: which_command
+
+- name: Uninstall argonone commands
+  become: yes
+  command: argonone-uninstall
+  when: which_command.rc | int == 0
