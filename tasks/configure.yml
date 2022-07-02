@@ -1,5 +1,6 @@
 ---
 - name: Copy argononed.conf
+  become: yes
   ansible.builtin.copy:
     src: argononed.conf
     dest: /etc/argononed.conf
