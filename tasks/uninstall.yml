@@ -11,6 +11,7 @@
     command: argonone-uninstall
     responses:
       "Press Y to continue:": Y
+  when: which_command.rc | int == 0
 
 - name: Remove files
   become: yes
